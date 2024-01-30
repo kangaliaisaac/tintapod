@@ -1,0 +1,21 @@
+baseURL = 'https://example.org/'
+disableKinds = ['taxonomy', 'term']
+enableRobotsTXT = true
+languageCode = 'en-us'
+timeZone = 'Africa/Nairobi'
+title = 'tintapod'
+
+[markup.goldmark.renderer]
+  unsafe = true
+  hardWraps = true
+
+[params]
+  copyrighthtml = 'Copyright &#xA9; 2024. All Rights Reserved.'
+
+[outputs]
+  home = ['html']
+  page = ['html']
+  rss = ['rss']
+  section = ['html', 'rss']
+  taxonomy = ['html', 'rss']
+  term = ['html', 'rss']

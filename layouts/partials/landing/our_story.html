@@ -1,0 +1,68 @@
+<div id="our-story"  class="our-story flex-col w-screen h-screen snap-always snap-start">
+    <div class="our-story-video-container flex flex-row w-full h-full justify-center items-center relative">
+        <div class="flex flex-col w-screen h-screen items-center justify-center absolute z-20 bg-transparent">
+            <button class="our-story-video-button active" onclick="handlePlay()">
+                <img src="/images/playButton.svg" alt="play">
+            </button>
+        </div>
+
+        <video controls preload poster class="our-story-video-frame max-w-full max-h-screen h-4/5 w-4/5">
+            <source src="/videos/websitelogopage.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="/videos/websitelogopage.mov" type='video/mov; codecs="theora, vorbis"'>
+            <source src=”/videos/websitelogopage.ogv” type='video/ogg; codecs="theora, vorbis"'>
+            <source src=”/videos/websitelogopage.webm type='video/webm; codecs="theora, vorbis"'>
+        </video>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" type="text/javascript"></script>
+    <script>
+        let ourStoryScrollerId;
+        let videoFrame = document.querySelector(".our-story-video-frame");
+        let playButton = document.querySelector(".our-story-video-button");
+
+        videoFrame.addEventListener("playing", () => {
+            anime({
+                targets: videoFrame,
+                easing: 'easeInOutQuart',
+                duration: 1000,
+                delay: 50,
+                elasticity: 300,
+                scale: 1.25,
+            });
+        });
+
+        videoFrame.addEventListener("pause", () => {
+            anime({
+                targets: videoFrame,
+                easing: 'easeInOutQuart',
+                duration: 1500,
+                delay: 100,
+                elasticity: 300,
+                scale: 1,
+            });
+            playButton.classList.add("active");
+            playButton.parentNode.classList.add("z-20");
+
+            if (videoFrame.ended || videoFrame.currentTime === videoFrame.duration) {
+                ourStoryScrollerId = setTimeout(function () {
+                    document.getElementById("services").scrollIntoView({
+                        behavior: "smooth",
+                    });
+                }, 1600);
+            }
+        });
+
+        function handlePlay() {
+;            if (playButton.classList.contains("active")) {
+                videoFrame.play();
+                playButton.classList.remove("active");
+                playButton.parentNode.classList.remove("z-20");
+            }
+        };
+
+        window.addEventListener(
+            "scroll", function() {
+                clearTimeout(ourStoryScrollerId);
+            }, false
+        );
+    </script>
+</div>

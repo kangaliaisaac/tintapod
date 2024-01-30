@@ -1,0 +1,12 @@
+{{ $res := resources.Get "css/style.css" }}
+{{- with $res }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    <link rel="stylesheet" href="https://use.typekit.net/prm2car.css">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.typekit.net/prm2car.css" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}

@@ -1,0 +1,24 @@
+{
+  "author": "Nyamu Kang'alia <isaac.kangalia@gmail.com>",
+  "description": "",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "tintapod",
+  "version": "1.0.0",
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./static/css/main.css -o ./assets/css/style.css --watch",
+    "build": "rm -rf public && hugo",
+    "start-dev": "hugo server --buildDrafts --config config/_default/config.toml --logLevel debug --disableFastRender",
+    "test-build": "rm -rf public && hugo -e test"
+  },
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "autoprefixer": "^10.4.17",
+    "go-template": "^0.1.7",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.2.4",
+    "prettier-plugin-go-template": "^0.0.15",
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,7 @@
+<div class="text-center">
+    {{ if .Site.Params.copyrighthtml }}
+        <p>{{ .Site.Params.CopyrightHTML | safeHTML }}</p>
+    {{ else }}
+        <p>Copyright {{ now.Year }}. All rights reserved.</p>
+    {{ end }}
+</div>

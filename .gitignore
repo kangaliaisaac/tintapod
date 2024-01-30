@@ -1,9 +1,6 @@
 .DS_Store
 .hugo_build.lock
 .lock
-/public
-/resources
-/static/app/
 go.sum
 hugo_stats.json
 node_modules

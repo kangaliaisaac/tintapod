@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://kangaliaisaac.github.io/tintapod/'
 disableKinds = ['taxonomy', 'term']
 enableRobotsTXT = true
 languageCode = 'en-us'

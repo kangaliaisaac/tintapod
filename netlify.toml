@@ -1,6 +1,6 @@
-[build]
+  [build]
   publish = "public"
-  command = "hugo --gc --minify --buildDrafts --config config/_default/config.toml --logLevel debug --disableFastRender"
+  command = "hugo --gc --minify --buildDrafts --config config/_default/config.toml --logLevel debug --verbose"
 
   [build.environment]
     HUGO_VERSION = "0.122.0"

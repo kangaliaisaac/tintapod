@@ -2,11 +2,65 @@
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build }}
       <script src="{{ .RelPermalink }}"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+          tailwind.config = {
+              theme: {
+                  fontFamily: {
+                      body: ["loos-extrawide", "sans-serif"],
+                  },
+                  extend: {
+                      colors: {
+                          "tintapod-gray": "#C7C8C8",
+                          "tintapod-teal": "#43757C",
+                          "tintapod-black": "#231F20",
+                          "tintapod-amber": "#FFCA22",
+                          "tintapod-navy": "#21456C",
+                      },
+                  },
+              },
+          };
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" type="text/javascript"></script>
+      <script>
+        fetch('https://use.typekit.net/prm2car.css', {
+          headers: {
+            'X-Typekit-Token': "af8a76793ac7904ef8a38aad82bd3cc23350ad0a"
+          }
+        });
+      </script>
     {{- end }}
   {{- else }}
-    {{- $opts := dict "minify" true }}
+  {{- $opts := dict "minify" true }}
     {{- with . | js.Build $opts | fingerprint }}
       <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+          tailwind.config = {
+              theme: {
+                  fontFamily: {
+                      body: ["loos-extrawide", "sans-serif"],
+                  },
+                  extend: {
+                      colors: {
+                          "tintapod-gray": "#C7C8C8",
+                          "tintapod-teal": "#43757C",
+                          "tintapod-black": "#231F20",
+                          "tintapod-amber": "#FFCA22",
+                          "tintapod-navy": "#21456C",
+                      },
+                  },
+              },
+          };
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" type="text/javascript"></script>
+      <script>
+        fetch('https://use.typekit.net/prm2car.css', {
+          headers: {
+            'X-Typekit-Token': "af8a76793ac7904ef8a38aad82bd3cc23350ad0a"
+          }
+        });
+      </script>
     {{- end }}
   {{- end }}
 {{- end }}

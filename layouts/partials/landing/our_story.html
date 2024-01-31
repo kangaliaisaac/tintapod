@@ -2,18 +2,18 @@
     <div class="our-story-video-container flex flex-row w-full h-full justify-center items-center relative">
         <div class="flex flex-col w-screen h-screen items-center justify-center absolute z-20 bg-transparent">
             <button class="our-story-video-button active" onclick="handlePlay()">
-                <img src="/images/playButton.svg" alt="play">
+                <img src="./images/playButton.svg" alt="play">
             </button>
         </div>
 
         <video controls preload poster class="our-story-video-frame max-w-full max-h-screen h-4/5 w-4/5">
-            <source src="/videos/websitelogopage.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-            <source src="/videos/websitelogopage.mov" type='video/mov; codecs="theora, vorbis"'>
-            <source src=”/videos/websitelogopage.ogv” type='video/ogg; codecs="theora, vorbis"'>
-            <source src=”/videos/websitelogopage.webm type='video/webm; codecs="theora, vorbis"'>
+            <source src="./videos/websitelogopage.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="./videos/websitelogopage.mov" type='video/mov; codecs="theora, vorbis"'>
+            <source src=”./videos/websitelogopage.ogv” type='video/ogg; codecs="theora, vorbis"'>
+            <source src=”./videos/websitelogopage.webm type='video/webm; codecs="theora, vorbis"'>
         </video>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" type="text/javascript"></script>
+    {{/*  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" type="text/javascript"></script>  */}}
     <script>
         let ourStoryScrollerId;
         let videoFrame = document.querySelector(".our-story-video-frame");

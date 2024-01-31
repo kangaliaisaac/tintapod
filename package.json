@@ -7,7 +7,7 @@
   "version": "1.0.0",
   "scripts": {
     "build-css": "npx tailwindcss -i ./static/css/main.css -o ./assets/css/style.css --watch",
-    "build": "rm -rf public && hugo --gc --minify --buildDrafts",
+    "build": "rm -rf public && hugo --gc --buildDrafts",
     "start-dev": "hugo server --buildDrafts --config config/_default/config.toml --logLevel debug --disableFastRender",
     "test-build": "rm -rf public && hugo -e test"
   },
